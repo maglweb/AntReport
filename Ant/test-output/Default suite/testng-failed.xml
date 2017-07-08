@@ -5,7 +5,10 @@
     <classes>
       <class name="test_ant.testNG">
         <methods>
-          <include name="beforeMethod"/>
+          <include name="inputBox"/>
+          <include name="afterClass"/>
+          <include name="news"/>
+          <include name="beforeClass"/>
           <include name="test_Sogou"/>
         </methods>
       </class> <!-- test_ant.testNG -->

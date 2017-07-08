@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="GBK"?>
 <project name="selenium" basedir="." default="transform">
-	<property name="lib.dir" value="C:\Users\Maglweb\git\Ant\Ant\libs" />
-	<property name="basedir" value="C:\Users\Maglweb\git\Ant\Ant" />  
+	<property name="basedir" value="." />
+	<property name="lib.dir" value="${basedir}/libs" />
+	<property name="testoutputdir" location="testoutput" />
 	<path id="test.classpath">
 		<!-- adding the saxon jar to your classpath -->
 		<fileset dir="${lib.dir}" includes="*.jar" />
 	</path>
 	<target name="transform">
-		<xslt in="${basedir}/testoutput/testng-results.xml" style="${basedir}/testoutput/testng-results.xsl" out="${basedir}/testoutput/index1.html ">
+		<xslt in="${testoutputdir}/testng-results.xml" style="${testoutputdir}/testng-results.xsl" out="${testoutputdir}/index1.html ">
 			<!-- you need to specify the directory here again -->
-			<param name="testNgXslt.outputDir" expression="${basedir}/testoutput" />
+			<param name="testNgXslt.outputDir" expression="${testoutputdir}/" />
 			<classpath refid="test.classpath" />
 		</xslt>
 	</target>
