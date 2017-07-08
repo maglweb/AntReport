@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="GBK"?>
+<project name="selenium" basedir="." default="transform">
+	<property name="lib.dir" value="D:\Eclipse\AutoTest\Surface\Ant\libs" />
+	<path id="test.classpath">
+		<!-- adding the saxon jar to your classpath -->
+		<fileset dir="${lib.dir}" includes="*.jar" />
+	</path>
+	<target name="transform">
+		<xslt in="D:/Eclipse/AutoTest/Surface/Ant/testoutput/testng-results.xml" style="D:/Eclipse/AutoTest/Surface/Ant/testoutput/testng-results.xsl" out="D:/Eclipse/AutoTest/Surface/Ant/testoutput/index1.html ">
+			<!-- you need to specify the directory here again -->
+			<param name="testNgXslt.outputDir" expression="D:\Eclipse\AutoTest\Surface\Ant\testoutput" />
+			<classpath refid="test.classpath" />
+		</xslt>
+	</target>
+</project>

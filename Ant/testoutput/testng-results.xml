@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="12016" started-at="2017-07-08T15:44:09Z" finished-at="2017-07-08T15:44:21Z">
+    <groups>
+    </groups>
+    <test name="Test" duration-ms="12016" started-at="2017-07-08T15:44:09Z" finished-at="2017-07-08T15:44:21Z">
+      <class name="test_ant.testNG">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:test_ant.testNG@1083964f]" name="beforeMethod" is-config="true" duration-ms="8246" started-at="2017-07-08T23:44:09Z" finished-at="2017-07-08T23:44:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="test_Sogou()[pri:0, instance:test_ant.testNG@1083964f]" name="test_Sogou" duration-ms="3426" started-at="2017-07-08T23:44:17Z" finished-at="2017-07-08T23:44:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test_Sogou -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:test_ant.testNG@1083964f]" name="afterMethod" is-config="true" duration-ms="329" started-at="2017-07-08T23:44:21Z" finished-at="2017-07-08T23:44:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+      </class> <!-- test_ant.testNG -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
