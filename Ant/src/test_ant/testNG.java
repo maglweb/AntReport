@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
@@ -27,8 +28,33 @@ public class testNG {
 		Assert.assertTrue(input.isDisplayed());
 	}
 
-	@BeforeMethod
-	public void beforeMethod() {
+	@Test(dependsOnMethods = ("test_Sogou"))
+	public void inputBox() {
+		driver.findElement(By.id("query")).sendKeys("淘车");
+		driver.findElement(By.id("stb")).click();
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Assert.assertTrue(driver.getPageSource().contains("二手车"));
+	}
+
+	@Test(dependsOnMethods = ("inputBox"))
+	public void news() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		WebElement news = driver.findElement(By.xpath("//a[text()='新闻']"));
+		Assert.assertFalse(news.isDisplayed());
+	}
+
+	@BeforeClass
+	public void beforeClass() {
 		/*
 		 * System.setProperty("webdriver.chrome.driver",
 		 * "D:\\Eclipse\\AutoTest\\Surface\\Ant\\chromedriver.exe");
@@ -50,7 +76,7 @@ public class testNG {
 	}
 
 	@AfterMethod
-	public void afterMethod() {
+	public void afterClass() {
 		driver.quit();
 	}
 }
